@@ -1,25 +1,176 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8118" systemVersion="15A172" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BV1-FR-VrT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BV1-FR-VrT">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8098"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--Game View Controller-->
+        <!--First View Controller-->
         <scene sceneID="tXr-a1-R10">
             <objects>
-                <viewController id="BV1-FR-VrT" customClass="GameViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BV1-FR-VrT" customClass="FirstViewController" customModule="ViewControllerMemoryLeak" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8aa-yV-Osq"/>
                         <viewControllerLayoutGuide type="bottom" id="qHh-Mt-9TT"/>
                     </layoutGuides>
-                    <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="3se-qz-xqx" customClass="SKView">
+                    <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="3se-qz-xqx">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e8s-WU-A66">
+                                <rect key="frame" x="277.5" y="282" width="45" height="36"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <state key="normal" title="Next">
+                                    <color key="titleColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </state>
+                                <connections>
+                                    <segue destination="EVi-3C-SK1" kind="show" id="Jsb-OH-JHe"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.2274509804" green="0.52941176469999995" blue="0.79215686269999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="e8s-WU-A66" firstAttribute="centerX" secondItem="3se-qz-xqx" secondAttribute="centerX" id="CZo-SZ-ffM"/>
+                            <constraint firstItem="e8s-WU-A66" firstAttribute="centerY" secondItem="3se-qz-xqx" secondAttribute="centerY" id="Fwn-wg-e3y"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-36" y="444"/>
+        </scene>
+        <!--Second View Controller-->
+        <scene sceneID="fpW-8n-Dkc">
+            <objects>
+                <viewController id="EVi-3C-SK1" customClass="SecondViewController" customModule="ViewControllerMemoryLeak" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hXf-xN-O64"/>
+                        <viewControllerLayoutGuide type="bottom" id="dif-UN-ru1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zph-5f-hr3">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wep-HX-O7Y">
+                                <rect key="frame" x="277.5" y="282" width="45" height="36"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <state key="normal" title="Next">
+                                    <color key="titleColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </state>
+                                <connections>
+                                    <segue destination="APU-8G-AhD" kind="show" id="zvg-Yt-AwO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cwc-3b-y0p">
+                                <rect key="frame" x="117.5" y="132" width="65" height="36"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <state key="normal" title="Return">
+                                    <color key="titleColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </state>
+                                <connections>
+                                    <action selector="dismiss:" destination="EVi-3C-SK1" eventType="touchUpInside" id="YMx-RP-xlM"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Spaceship" translatesAutoresizingMaskIntoConstraints="NO" id="hVO-kk-KWh">
+                                <rect key="frame" x="375" y="375" width="150" height="150"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Spaceship" translatesAutoresizingMaskIntoConstraints="NO" id="bA7-7v-1uz">
+                                <rect key="frame" x="375" y="75" width="150" height="150"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Spaceship" translatesAutoresizingMaskIntoConstraints="NO" id="m9l-3j-NKU">
+                                <rect key="frame" x="75" y="375" width="150" height="150"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.81568627449999997" green="0.16862745100000001" blue="0.1215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wep-HX-O7Y" firstAttribute="centerY" secondItem="zph-5f-hr3" secondAttribute="centerY" id="7ZX-W8-sPl"/>
+                            <constraint firstItem="hVO-kk-KWh" firstAttribute="centerX" secondItem="zph-5f-hr3" secondAttribute="centerX" multiplier="3/2" id="8sw-7C-AGs"/>
+                            <constraint firstItem="bA7-7v-1uz" firstAttribute="centerY" secondItem="zph-5f-hr3" secondAttribute="centerY" multiplier="1/2" id="8vE-NJ-0b8"/>
+                            <constraint firstItem="bA7-7v-1uz" firstAttribute="centerX" secondItem="zph-5f-hr3" secondAttribute="centerX" multiplier="3/2" id="CsU-bo-ZGs"/>
+                            <constraint firstItem="bA7-7v-1uz" firstAttribute="width" secondItem="zph-5f-hr3" secondAttribute="width" multiplier="1/4" id="QOd-Zq-l0y"/>
+                            <constraint firstItem="hVO-kk-KWh" firstAttribute="centerY" secondItem="zph-5f-hr3" secondAttribute="centerY" multiplier="3/2" id="S7w-QF-4YW"/>
+                            <constraint firstItem="hVO-kk-KWh" firstAttribute="width" secondItem="zph-5f-hr3" secondAttribute="width" multiplier="1/4" id="TyK-mi-rX5"/>
+                            <constraint firstItem="m9l-3j-NKU" firstAttribute="centerY" secondItem="zph-5f-hr3" secondAttribute="centerY" multiplier="3/2" id="VX8-Rt-pJY"/>
+                            <constraint firstItem="m9l-3j-NKU" firstAttribute="width" secondItem="zph-5f-hr3" secondAttribute="width" multiplier="1/4" id="Z7q-XD-hTu"/>
+                            <constraint firstItem="wep-HX-O7Y" firstAttribute="centerX" secondItem="zph-5f-hr3" secondAttribute="centerX" id="ald-3f-I1j"/>
+                            <constraint firstItem="hVO-kk-KWh" firstAttribute="height" secondItem="zph-5f-hr3" secondAttribute="height" multiplier="1/4" id="dDn-g5-95l"/>
+                            <constraint firstItem="m9l-3j-NKU" firstAttribute="height" secondItem="zph-5f-hr3" secondAttribute="height" multiplier="1/4" id="efN-gE-tE1"/>
+                            <constraint firstItem="Cwc-3b-y0p" firstAttribute="centerX" secondItem="zph-5f-hr3" secondAttribute="centerX" multiplier="1/2" id="nJ2-NX-elT"/>
+                            <constraint firstItem="m9l-3j-NKU" firstAttribute="centerX" secondItem="zph-5f-hr3" secondAttribute="centerX" multiplier="1/2" id="qhU-4F-25J"/>
+                            <constraint firstItem="Cwc-3b-y0p" firstAttribute="centerY" secondItem="zph-5f-hr3" secondAttribute="centerY" multiplier="1/2" id="yUx-M8-DFL"/>
+                            <constraint firstItem="bA7-7v-1uz" firstAttribute="height" secondItem="zph-5f-hr3" secondAttribute="height" multiplier="1/4" id="ygN-EW-V4T"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="awf-GK-J2D" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="603" y="441"/>
+        </scene>
+        <!--Third View Controller-->
+        <scene sceneID="I8P-Lt-T1c">
+            <objects>
+                <viewController id="APU-8G-AhD" customClass="ThirdViewController" customModule="ViewControllerMemoryLeak" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HjS-lr-eCG"/>
+                        <viewControllerLayoutGuide type="bottom" id="i6f-Cp-HAk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tKx-4h-R3m">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vde-NU-JQe">
+                                <rect key="frame" x="117.5" y="132" width="65" height="36"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <state key="normal" title="Return">
+                                    <color key="titleColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </state>
+                                <connections>
+                                    <action selector="dismiss:" destination="APU-8G-AhD" eventType="touchUpInside" id="CdI-7D-CZ3"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Spaceship" translatesAutoresizingMaskIntoConstraints="NO" id="ae9-R4-Ahd">
+                                <rect key="frame" x="225" y="225" width="150" height="150"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Spaceship" translatesAutoresizingMaskIntoConstraints="NO" id="KZM-x3-nlw">
+                                <rect key="frame" x="375" y="75" width="150" height="150"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Spaceship" translatesAutoresizingMaskIntoConstraints="NO" id="VdF-zC-hhf">
+                                <rect key="frame" x="375" y="375" width="150" height="150"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Spaceship" translatesAutoresizingMaskIntoConstraints="NO" id="oPN-3t-GeB">
+                                <rect key="frame" x="75" y="375" width="150" height="150"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.25098039220000001" green="0.63137254899999995" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="oPN-3t-GeB" firstAttribute="centerX" secondItem="tKx-4h-R3m" secondAttribute="centerX" multiplier="1/2" id="0k7-mv-jFm"/>
+                            <constraint firstItem="ae9-R4-Ahd" firstAttribute="centerX" secondItem="tKx-4h-R3m" secondAttribute="centerX" id="1Zw-lx-6is"/>
+                            <constraint firstItem="VdF-zC-hhf" firstAttribute="centerY" secondItem="tKx-4h-R3m" secondAttribute="centerY" multiplier="3/2" id="3tu-JG-hrg"/>
+                            <constraint firstItem="oPN-3t-GeB" firstAttribute="height" secondItem="tKx-4h-R3m" secondAttribute="height" multiplier="1/4" id="5gq-ED-P6A"/>
+                            <constraint firstItem="KZM-x3-nlw" firstAttribute="width" secondItem="tKx-4h-R3m" secondAttribute="width" multiplier="1/4" id="QC0-zL-0OU"/>
+                            <constraint firstItem="KZM-x3-nlw" firstAttribute="centerX" secondItem="tKx-4h-R3m" secondAttribute="centerX" multiplier="3/2" id="QU3-OL-a3K"/>
+                            <constraint firstItem="ae9-R4-Ahd" firstAttribute="width" secondItem="tKx-4h-R3m" secondAttribute="width" multiplier="1/4" id="Qee-oa-AlC"/>
+                            <constraint firstItem="vde-NU-JQe" firstAttribute="centerX" secondItem="tKx-4h-R3m" secondAttribute="centerX" multiplier="1/2" id="QtA-97-rCi"/>
+                            <constraint firstItem="KZM-x3-nlw" firstAttribute="height" secondItem="tKx-4h-R3m" secondAttribute="height" multiplier="1/4" id="RMp-QQ-01S"/>
+                            <constraint firstItem="VdF-zC-hhf" firstAttribute="height" secondItem="tKx-4h-R3m" secondAttribute="height" multiplier="1/4" id="ZwG-j3-b6a"/>
+                            <constraint firstItem="KZM-x3-nlw" firstAttribute="centerY" secondItem="tKx-4h-R3m" secondAttribute="centerY" multiplier="1/2" id="aXk-Ju-Tko"/>
+                            <constraint firstItem="VdF-zC-hhf" firstAttribute="centerX" secondItem="tKx-4h-R3m" secondAttribute="centerX" multiplier="3/2" id="bFw-2k-pwo"/>
+                            <constraint firstItem="oPN-3t-GeB" firstAttribute="width" secondItem="tKx-4h-R3m" secondAttribute="width" multiplier="1/4" id="ftn-ab-ovF"/>
+                            <constraint firstItem="ae9-R4-Ahd" firstAttribute="height" secondItem="tKx-4h-R3m" secondAttribute="height" multiplier="1/4" id="jxm-Q6-VcI"/>
+                            <constraint firstItem="VdF-zC-hhf" firstAttribute="width" secondItem="tKx-4h-R3m" secondAttribute="width" multiplier="1/4" id="rvy-Jf-CeZ"/>
+                            <constraint firstItem="vde-NU-JQe" firstAttribute="centerY" secondItem="tKx-4h-R3m" secondAttribute="centerY" multiplier="1/2" id="v7U-4C-ypf"/>
+                            <constraint firstItem="ae9-R4-Ahd" firstAttribute="centerY" secondItem="tKx-4h-R3m" secondAttribute="centerY" id="y1k-dW-ozl"/>
+                            <constraint firstItem="oPN-3t-GeB" firstAttribute="centerY" secondItem="tKx-4h-R3m" secondAttribute="centerY" multiplier="3/2" id="yhp-k6-VHu"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wCj-Gm-7o3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1272" y="444"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Spaceship" width="394" height="347"/>
+    </resources>
 </document>
