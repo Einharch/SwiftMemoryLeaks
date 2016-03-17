@@ -3,6 +3,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
@@ -72,36 +74,96 @@
                                     <action selector="dismiss:" destination="EVi-3C-SK1" eventType="touchUpInside" id="YMx-RP-xlM"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Spaceship" translatesAutoresizingMaskIntoConstraints="NO" id="hVO-kk-KWh">
-                                <rect key="frame" x="375" y="375" width="150" height="150"/>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Spaceship" translatesAutoresizingMaskIntoConstraints="NO" id="bA7-7v-1uz">
-                                <rect key="frame" x="375" y="75" width="150" height="150"/>
+                                <rect key="frame" x="390" y="90" width="120" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="bA7-7v-1uz" secondAttribute="height" multiplier="1:1" id="x5i-Ii-Le4"/>
+                                </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Spaceship" translatesAutoresizingMaskIntoConstraints="NO" id="m9l-3j-NKU">
-                                <rect key="frame" x="75" y="375" width="150" height="150"/>
+                                <rect key="frame" x="90" y="240" width="120" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="m9l-3j-NKU" secondAttribute="height" multiplier="1:1" id="t3T-s0-NyY"/>
+                                </constraints>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Spaceship" translatesAutoresizingMaskIntoConstraints="NO" id="hVO-kk-KWh">
+                                <rect key="frame" x="390" y="240" width="120" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="hVO-kk-KWh" secondAttribute="height" multiplier="1:1" id="rV2-G1-Zbs"/>
+                                </constraints>
+                            </imageView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="tZQ-Je-yvt">
+                                <rect key="frame" x="20" y="368" width="560" height="224"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Nvl-TG-wfq">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="BuF-zr-HvL">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oQM-NA-Jiy">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="oQM-NA-Jiy" firstAttribute="height" secondItem="BuF-zr-HvL" secondAttribute="height" id="2ts-23-LdD"/>
+                                            <constraint firstItem="oQM-NA-Jiy" firstAttribute="width" secondItem="BuF-zr-HvL" secondAttribute="width" id="DrN-ct-xux"/>
+                                            <constraint firstItem="oQM-NA-Jiy" firstAttribute="centerY" secondItem="BuF-zr-HvL" secondAttribute="centerY" id="H3q-Mt-Lby"/>
+                                            <constraint firstItem="oQM-NA-Jiy" firstAttribute="centerX" secondItem="BuF-zr-HvL" secondAttribute="centerX" id="aWf-5W-sha"/>
+                                        </constraints>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" red="0.81568627449999997" green="0.16862745100000001" blue="0.1215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="wep-HX-O7Y" firstAttribute="centerY" secondItem="zph-5f-hr3" secondAttribute="centerY" id="7ZX-W8-sPl"/>
                             <constraint firstItem="hVO-kk-KWh" firstAttribute="centerX" secondItem="zph-5f-hr3" secondAttribute="centerX" multiplier="3/2" id="8sw-7C-AGs"/>
                             <constraint firstItem="bA7-7v-1uz" firstAttribute="centerY" secondItem="zph-5f-hr3" secondAttribute="centerY" multiplier="1/2" id="8vE-NJ-0b8"/>
+                            <constraint firstItem="tZQ-Je-yvt" firstAttribute="centerX" secondItem="zph-5f-hr3" secondAttribute="centerX" id="Atf-jf-UU2"/>
+                            <constraint firstItem="tZQ-Je-yvt" firstAttribute="leading" secondItem="zph-5f-hr3" secondAttribute="leadingMargin" id="Bxz-Fw-FRc"/>
                             <constraint firstItem="bA7-7v-1uz" firstAttribute="centerX" secondItem="zph-5f-hr3" secondAttribute="centerX" multiplier="3/2" id="CsU-bo-ZGs"/>
-                            <constraint firstItem="bA7-7v-1uz" firstAttribute="width" secondItem="zph-5f-hr3" secondAttribute="width" multiplier="1/4" id="QOd-Zq-l0y"/>
-                            <constraint firstItem="hVO-kk-KWh" firstAttribute="centerY" secondItem="zph-5f-hr3" secondAttribute="centerY" multiplier="3/2" id="S7w-QF-4YW"/>
-                            <constraint firstItem="hVO-kk-KWh" firstAttribute="width" secondItem="zph-5f-hr3" secondAttribute="width" multiplier="1/4" id="TyK-mi-rX5"/>
-                            <constraint firstItem="m9l-3j-NKU" firstAttribute="centerY" secondItem="zph-5f-hr3" secondAttribute="centerY" multiplier="3/2" id="VX8-Rt-pJY"/>
-                            <constraint firstItem="m9l-3j-NKU" firstAttribute="width" secondItem="zph-5f-hr3" secondAttribute="width" multiplier="1/4" id="Z7q-XD-hTu"/>
+                            <constraint firstItem="bA7-7v-1uz" firstAttribute="width" secondItem="zph-5f-hr3" secondAttribute="width" multiplier="1/5" id="QOd-Zq-l0y"/>
+                            <constraint firstItem="hVO-kk-KWh" firstAttribute="centerY" secondItem="zph-5f-hr3" secondAttribute="centerY" id="S7w-QF-4YW"/>
+                            <constraint firstItem="hVO-kk-KWh" firstAttribute="width" secondItem="zph-5f-hr3" secondAttribute="width" multiplier="1/5" id="TyK-mi-rX5"/>
+                            <constraint firstItem="m9l-3j-NKU" firstAttribute="centerY" secondItem="zph-5f-hr3" secondAttribute="centerY" id="VX8-Rt-pJY"/>
+                            <constraint firstItem="dif-UN-ru1" firstAttribute="top" secondItem="tZQ-Je-yvt" secondAttribute="bottom" constant="8" symbolic="YES" id="Vkd-RS-UEn"/>
+                            <constraint firstItem="m9l-3j-NKU" firstAttribute="width" secondItem="zph-5f-hr3" secondAttribute="width" multiplier="1/5" id="Z7q-XD-hTu"/>
                             <constraint firstItem="wep-HX-O7Y" firstAttribute="centerX" secondItem="zph-5f-hr3" secondAttribute="centerX" id="ald-3f-I1j"/>
                             <constraint firstItem="hVO-kk-KWh" firstAttribute="height" secondItem="zph-5f-hr3" secondAttribute="height" multiplier="1/4" id="dDn-g5-95l"/>
                             <constraint firstItem="m9l-3j-NKU" firstAttribute="height" secondItem="zph-5f-hr3" secondAttribute="height" multiplier="1/4" id="efN-gE-tE1"/>
+                            <constraint firstItem="tZQ-Je-yvt" firstAttribute="top" secondItem="m9l-3j-NKU" secondAttribute="bottom" constant="8" symbolic="YES" id="iN4-Aq-HNq"/>
                             <constraint firstItem="Cwc-3b-y0p" firstAttribute="centerX" secondItem="zph-5f-hr3" secondAttribute="centerX" multiplier="1/2" id="nJ2-NX-elT"/>
                             <constraint firstItem="m9l-3j-NKU" firstAttribute="centerX" secondItem="zph-5f-hr3" secondAttribute="centerX" multiplier="1/2" id="qhU-4F-25J"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="tZQ-Je-yvt" secondAttribute="trailing" id="vMb-hV-kCJ"/>
                             <constraint firstItem="Cwc-3b-y0p" firstAttribute="centerY" secondItem="zph-5f-hr3" secondAttribute="centerY" multiplier="1/2" id="yUx-M8-DFL"/>
-                            <constraint firstItem="bA7-7v-1uz" firstAttribute="height" secondItem="zph-5f-hr3" secondAttribute="height" multiplier="1/4" id="ygN-EW-V4T"/>
+                            <constraint firstItem="bA7-7v-1uz" firstAttribute="height" secondItem="zph-5f-hr3" secondAttribute="height" multiplier="1/5" id="ygN-EW-V4T"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="efN-gE-tE1"/>
+                                <exclude reference="ygN-EW-V4T"/>
+                                <exclude reference="dDn-g5-95l"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="collection" destination="tZQ-Je-yvt" id="Lrh-kW-ZZD"/>
+                        <outlet property="nextButton" destination="wep-HX-O7Y" id="bYu-hs-5A8"/>
+                        <outlet property="spaceshipBottomLeft" destination="m9l-3j-NKU" id="qSj-Ez-QXZ"/>
+                        <outlet property="spaceshipBottomRight" destination="hVO-kk-KWh" id="Ykd-QK-Avg"/>
+                        <outlet property="spaceshipTopRight" destination="bA7-7v-1uz" id="HAN-r7-6Vr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="awf-GK-J2D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -110,7 +172,7 @@
         <!--Third View Controller-->
         <scene sceneID="I8P-Lt-T1c">
             <objects>
-                <viewController id="APU-8G-AhD" customClass="ThirdViewController" customModule="ViewControllerMemoryLeak" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="flipHorizontal" id="APU-8G-AhD" customClass="ThirdViewController" customModule="ViewControllerMemoryLeak" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="HjS-lr-eCG"/>
                         <viewControllerLayoutGuide type="bottom" id="i6f-Cp-HAk"/>
@@ -164,6 +226,12 @@
                             <constraint firstItem="oPN-3t-GeB" firstAttribute="centerY" secondItem="tKx-4h-R3m" secondAttribute="centerY" multiplier="3/2" id="yhp-k6-VHu"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="spaceshipBottomLeft" destination="oPN-3t-GeB" id="3Bb-sq-5dh"/>
+                        <outlet property="spaceshipBottomRight" destination="VdF-zC-hhf" id="nmY-Zj-BtS"/>
+                        <outlet property="spaceshipMiddle" destination="ae9-R4-Ahd" id="WVj-BS-TBC"/>
+                        <outlet property="spaceshipTopRight" destination="KZM-x3-nlw" id="R8d-29-o0c"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wCj-Gm-7o3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
